@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<ul class="hexagon-container">
+          <li class="hexagon">
+              <h1>Os números primos</h1>
+          </li>
+          <li class="hexagon start-pause" onclick="start()">
+              <p>Clique a qualquer tempo aqui para iniciar</p>
+          </li>
+          <li class="hexagon start-pause">
+              <p>Clique a qualquer tempo aqui para parar</p>
+          </li>
+          <li *ngFor="let p of numbers" class="hexagon">
+            {{ p }}
+          </li>
+  </ul>

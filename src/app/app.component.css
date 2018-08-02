@@ -1,0 +1,68 @@
+*{
+    background-color: transparent;
+}
+.start-pause{
+    cursor: pointer;
+}
+
+/* Hexagons */
+.hexagon-container {
+  margin-top: 5vh;
+  width: 96.5vw;
+  display: grid;
+  grid-template-columns: var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width);
+  grid-auto-rows: calc(var(--hex-width) - 28.87px/2);
+  grid-gap: var(--hex-between) var(--hex-between);
+  padding-bottom: var(--hex-border);
+}
+.hexagon {
+  align-items: center;
+  background-color: var(--color-hex-default);  
+  display: flex;
+  fill: white;
+  height: var(--hex-height);
+  justify-content: center;
+  margin: var(--hex-border) 0;
+  position: relative;
+  transition: var(--hex-transition);
+  width: var(--hex-width);
+  color: #eec33d;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.hexagon::after,
+.hexagon::before {
+  border-left: var(--hex-margin) solid transparent;
+  border-right: var(--hex-margin) solid transparent;
+  content: "";
+  left: 0;
+  position: absolute;
+  transition: var(--hex-transition);
+  width: 0;
+}
+.hexagon::after {
+  border-top: var(--hex-border) solid var(--color-hex-default);
+  top: 100%;
+  width: 0;
+}
+.hexagon::before {
+  border-bottom: var(--hex-border) solid var(--color-hex-default);
+  bottom: 100%;
+}
+
+.hexagon:nth-child(14n + 8),
+.hexagon:nth-child(14n + 9),
+.hexagon:nth-child(14n + 10),
+.hexagon:nth-child(14n + 11),
+.hexagon:nth-child(14n + 12),
+.hexagon:nth-child(14n + 13),
+.hexagon:nth-child(14n + 14){
+  margin-left: calc(var(--hex-width) / 2 + var(--hex-between) / 2);
+}
+
+.hexagon h1{
+    color: #eec33d;
+    font-size: 2vw;
+    text-align: center;
+}
