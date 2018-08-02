@@ -58,6 +58,8 @@ export class AppComponent {
   }
 
   stop(): void{
+  	this.started=false;
+  	this.paused=false;
   	this.stopped=true;
   }
 

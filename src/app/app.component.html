@@ -1,42 +1,54 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <ul class="hexagon-container">
+          <!-- Espaçamento -->
+          <li class="hexagon-clear">
+              <p></p>
+          </li>
+          <!-- Espaçamento -->
+          <li *ngIf="!stopped&&!paused" class="hexagon-clear">
+              <p></p>
+          </li>
+          <!-- Sobre -->
+          <li *ngIf="!started&&!paused" class="hexagon start-pause">
+              <p>Sobre</p>
+          </li>
+          <li *ngIf="stopped||paused" class="hexagon start-pause" (click)="resume()">
+              <p>Quantidade de primos: {{this.numbers.length}}</p>
+          </li>   
+          <!-- Pausar -->
+          <li *ngIf="started&&!paused&&!stopped" class="hexagon start-pause" (click)="pause()">
+              <p>Pausar</p>
+          </li>        
+          <!-- Continuar -->
+          <li *ngIf="paused&&!stopped" class="hexagon start-pause" (click)="resume()">
+              <p>Continuar</p>
+          </li>
+          <!-- Titulo -->
           <li class="hexagon">
               <h1>Colméia dos Primos</h1>
           </li>
-          <li class="hexagon start-pause" id="pass">
-              <p>Sobre</p>
-          </li>
-          <li *ngIf="!started" class="hexagon start-pause" (click)="start()">
+          <!-- Começar -->
+          <li *ngIf="!started&&!stopped" class="hexagon start-pause" (click)="start()">
               <p>Começar</p>
           </li>
-          <li *ngIf="started&&!paused&&!stopped" class="hexagon start-pause" id="pass" (click)="pause()">
-              <p>Pausar</p>
-          </li>
-          <li *ngIf="paused&&!stopped" class="hexagon start-pause" id="pass" (click)="resume()">
-              <p>Continuar</p>
-          </li>
-          <li *ngIf="started&&!stopped" class="hexagon start-pause" id="pass" (click)="stop()">
+          <!-- Parar -->
+          <li *ngIf="started&&!stopped" class="hexagon start-pause" (click)="stop()">
               <p>Parar</p>
           </li>
-          <li *ngIf="stopped" class="hexagon start-pause" id="pass" (click)="start()">
+          <!-- Recomeçar -->
+          <li *ngIf="stopped" class="hexagon start-pause" (click)="start()">
               <p>Recomeçar</p>
           </li>
-          <li *ngIf="stopped" class="hexagon start-pause" id="pass" (click)="clear()">
-              <p>Limpar lista</p>
-          </li>
-          <li *ngIf="stopped||paused" class="hexagon start-pause" id="pass">
+          <!-- Baixar -->
+          <li *ngIf="stopped||paused" class="hexagon start-pause">
               <p>Baixar lista</p>
           </li>
-          <li class="hexagon-clear" id="pass">
+          <!-- Espaçamento -->
+          <li class="hexagon-clear">
               <p></p>
           </li>
-          <li class="hexagon-clear" id="pass">
-              <p></p>
-          </li>
-          <li *ngIf="!paused&&!stopped" class="hexagon-clear" id="pass">
-              <p></p>
-          </li>
-          <li *ngIf="!started" class="hexagon-clear" id="pass">
+          <!-- Espaçamento -->
+          <li *ngIf="!stopped&&!paused" class="hexagon-clear">
               <p></p>
           </li>
           <li *ngFor="let p of numbers;trackBy: trackByFn" class="hexagon">

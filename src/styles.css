@@ -25,9 +25,28 @@ app-root{
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: 97vh;
   display: flex;
   flex-direction: column;
   justify-content: top;
   align-items: center;
+}
+
+footer{
+  margin: 0;
+  padding: 0;
+  height: 3vh;
+  width: 100vw;
+  background-color:#312f17;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer p{
+  margin: 0;
+  padding: 0;
+  color: #eec33d;
+  font-size: 2vh;
+  text-align: center;
 }
