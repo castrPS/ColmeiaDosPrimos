@@ -8,7 +8,7 @@
 /* Hexagons */
 .hexagon-container {
   margin-top: 5vh;
-  width: 96.5vw;
+  width: 76vw;
   display: grid;
   grid-template-columns: var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width) var(--hex-width);
   grid-auto-rows: calc(var(--hex-width) - 28.87px/2);

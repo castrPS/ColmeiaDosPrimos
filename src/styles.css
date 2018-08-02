@@ -2,10 +2,6 @@ body{
     margin: 0;
     padding: 0;
     background-color: #eec33d;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 *{
@@ -14,7 +10,7 @@ body{
 
 :root {
   /* Change this to change the appearance of the hexaons */
-  --hex-width: 12vw; 
+  --hex-width: 10vw; 
   --hex-between: 1vw;
   
   /* Other hexagon dimentions */
@@ -23,4 +19,14 @@ body{
   --hex-border: calc(var(--hex-margin) / 1.73 /* sqrt(3) */);
   --hex-transition: all .2s ease;
   --color-hex-default:#312f17;
+}
+
+app-root{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

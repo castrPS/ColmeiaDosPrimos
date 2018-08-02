@@ -3,13 +3,13 @@
           <li class="hexagon">
               <h1>Os números primos</h1>
           </li>
-          <li class="hexagon start-pause" onclick="start()">
+          <li class="hexagon start-pause" (click)="generatePrimeNumbers()">
               <p>Clique a qualquer tempo aqui para iniciar</p>
           </li>
           <li class="hexagon start-pause">
               <p>Clique a qualquer tempo aqui para parar</p>
           </li>
-          <li *ngFor="let p of numbers" class="hexagon">
-            {{ p }}
+          <li *ngFor="let p of numbers;trackBy: trackByFn" class="hexagon">
+            {{ p.id }}
           </li>
   </ul>
