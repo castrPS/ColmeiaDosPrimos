@@ -1,13 +1,43 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <ul class="hexagon-container">
           <li class="hexagon">
-              <h1>Os números primos</h1>
+              <h1>Colméia dos Primos</h1>
           </li>
-          <li class="hexagon start-pause" (click)="generatePrimeNumbers()">
-              <p>Clique a qualquer tempo aqui para iniciar</p>
+          <li class="hexagon start-pause" id="pass">
+              <p>Sobre</p>
           </li>
-          <li class="hexagon start-pause">
-              <p>Clique a qualquer tempo aqui para parar</p>
+          <li *ngIf="!started" class="hexagon start-pause" (click)="start()">
+              <p>Começar</p>
+          </li>
+          <li *ngIf="started&&!paused&&!stopped" class="hexagon start-pause" id="pass" (click)="pause()">
+              <p>Pausar</p>
+          </li>
+          <li *ngIf="paused&&!stopped" class="hexagon start-pause" id="pass" (click)="resume()">
+              <p>Continuar</p>
+          </li>
+          <li *ngIf="started&&!stopped" class="hexagon start-pause" id="pass" (click)="stop()">
+              <p>Parar</p>
+          </li>
+          <li *ngIf="stopped" class="hexagon start-pause" id="pass" (click)="start()">
+              <p>Recomeçar</p>
+          </li>
+          <li *ngIf="stopped" class="hexagon start-pause" id="pass" (click)="clear()">
+              <p>Limpar lista</p>
+          </li>
+          <li *ngIf="stopped||paused" class="hexagon start-pause" id="pass">
+              <p>Baixar lista</p>
+          </li>
+          <li class="hexagon-clear" id="pass">
+              <p></p>
+          </li>
+          <li class="hexagon-clear" id="pass">
+              <p></p>
+          </li>
+          <li *ngIf="!paused&&!stopped" class="hexagon-clear" id="pass">
+              <p></p>
+          </li>
+          <li *ngIf="!started" class="hexagon-clear" id="pass">
+              <p></p>
           </li>
           <li *ngFor="let p of numbers;trackBy: trackByFn" class="hexagon">
             {{ p.id }}

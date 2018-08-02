@@ -9,6 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'primos';
   numbers = [];
+  actual=2;
+  started = false;
+  paused = false;
+  stopped = false;
 
   isPrime (num: number): Boolean {
     var limit=Math.sqrt(num);
@@ -20,17 +24,55 @@ export class AppComponent {
     return true;
 	}
 
-  generatePrimeNumbers (): void {
-  	this.numbers = [{id: 2}];
-		for (var i = 3; i<100; i++){
+	sleep(milliseconds: number): void {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+  	console.log(i);
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+	}
+
+  generatePrimeNumber (num: number): number{
+		for (var i = num+1; i>0; i++){
 			if ( this.isPrime(i) ) {
-				this.numbers = [{id: i}].concat(this.numbers);
-				
+				return i;
 			}
 		}
   }
+  
+  start (): void {
+  	this.started = true;
+  	this.paused = false;
+  	this.stopped=false;
+  	this.numbers = [{id: this.actual}];
+  }
 
-  trackByFn(index, item) {
+  pause(): void{
+  	this.paused = true;
+  }
+
+  resume(): void{
+  	this.paused = false;
+  }
+
+  stop(): void{
+  	this.stopped=true;
+  }
+
+  clear(): void{
+  	this.numbers= [];
+  	this.actual=2;
+  }
+
+  pass (): void{
+  	this.actual = this.generatePrimeNumber(this.actual);
+  	this.numbers= [{id: this.actual}].concat(this.numbers);
+  }
+
+
+  trackByFn(index, item):void {
     return index;
   }
 }
