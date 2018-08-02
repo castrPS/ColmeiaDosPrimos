@@ -65,6 +65,15 @@ export class AppComponent{
 
   resume(): void{
   	this.paused = false;
+  	var interval = setInterval(()=>{
+  		if(!this.stopped && !this.paused){
+  			this.actual= this.generatePrimeNumber(this.actual);
+  			this.numbers = [{id: this.actual}].concat(this.numbers);
+  		}
+  		else{
+  			clearInterval(interval);
+  		}
+  	},1000);
   }
 
   stop(): void{
