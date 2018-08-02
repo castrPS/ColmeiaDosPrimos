@@ -9,7 +9,7 @@
 .hexagon-container {
   margin-top: 5vh;
   width: 81vw;
-  height: 95vh;
+  max-height: 95vh;
   padding: 0;
   margin-bottom: 0;
   margin-left: 0;

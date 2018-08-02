@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent{
   title = 'primos';
   numbers = [];
-  actual=2;
+  actual=0;
   started = false;
   paused = false;
   stopped = false;
@@ -46,7 +46,13 @@ export class AppComponent {
   	this.started = true;
   	this.paused = false;
   	this.stopped=false;
+  	this.actual=2;
   	this.numbers = [{id: this.actual}];
+  }
+
+  pass (): void{
+  	this.actual= this.generatePrimeNumber(this.actual);
+  	this.numbers = [{id: this.actual}].concat(this.numbers);
   }
 
   pause(): void{
@@ -67,12 +73,6 @@ export class AppComponent {
   	this.numbers= [];
   	this.actual=2;
   }
-
-  pass (): void{
-  	this.actual = this.generatePrimeNumber(this.actual);
-  	this.numbers= [{id: this.actual}].concat(this.numbers);
-  }
-
 
   trackByFn(index, item):void {
     return index;

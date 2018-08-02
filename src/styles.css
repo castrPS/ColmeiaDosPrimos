@@ -30,6 +30,7 @@ app-root{
   flex-direction: column;
   justify-content: top;
   align-items: center;
+  overflow-y: auto
 }
 
 footer{
