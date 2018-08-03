@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'home',
+  selector: '',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
@@ -14,6 +14,7 @@ export class MainComponent{
   paused = false;
   stopped = false;
 
+  //verifica se o numero e primo analisando até a sua raiz se possui algum divisor
   isPrime (num: number): Boolean {
     var limit=Math.sqrt(num);
     for ( var i = 2; i <= limit; i++ ) {
@@ -24,16 +25,7 @@ export class MainComponent{
     return true;
 	}
 
-	sleep(milliseconds: number): void {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-  	console.log(i);
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
-	}
-
+  //dado o ultimo numero gerado, gera o primo seguinte 
   generatePrimeNumber (num: number): number{
 		for (var i = num+1; i>0; i++){
 			if ( this.isPrime(i) ) {
@@ -48,6 +40,7 @@ export class MainComponent{
   	this.stopped=false;
   	this.actual=2;
   	this.numbers = [this.actual];
+    //chama a função a cada 0,5 segundos para gerar um novo primo
   	var interval = setInterval(()=>{
   		if(!this.stopped && !this.paused){
   			this.actual= this.generatePrimeNumber(this.actual);
@@ -56,7 +49,7 @@ export class MainComponent{
   		else{
   			clearInterval(interval);
   		}
-  	},500);
+  	},250);
   }
 
   pause(): void{
@@ -65,6 +58,7 @@ export class MainComponent{
 
   resume(): void{
   	this.paused = false;
+    //chama a função a cada 0,5 segundos para gerar um novo primo
   	var interval = setInterval(()=>{
   		if(!this.stopped && !this.paused){
   			this.actual= this.generatePrimeNumber(this.actual);
@@ -73,7 +67,7 @@ export class MainComponent{
   		else{
   			clearInterval(interval);
   		}
-  	},1000);
+  	},250);
   }
 
   stop(): void{
@@ -88,6 +82,7 @@ export class MainComponent{
   }
 
   download(): void{
+    //cria um elemento que não aparece no html para fazer a passagem pra area de copia
     const el = document.createElement('textarea');
     el.value = JSON.stringify(this.numbers);
     document.body.appendChild(el);
@@ -96,6 +91,7 @@ export class MainComponent{
     document.body.removeChild(el);
   }
 
+  //atraves dessa funcao que atualiza a pagina com os numeros que vao sendo adicionados
   trackByFn(index, item):void {
     return index;
   }

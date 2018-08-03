@@ -37,6 +37,8 @@
   grid-gap: var(--hex-between) var(--hex-between);
   padding-bottom: var(--hex-border);
 }
+
+/*Os hexagonos sao feitos atraves de divs com bordas alteradas e sobrepostas*/
 .hexagon {
   align-items: center;
   background-color: var(--color-hex-default);  
@@ -73,6 +75,7 @@
   bottom: 100%;
 }
 
+/* Aqui e o que permite que os hexagonos se encaixem bem*/
 .hexagon:nth-child(14n + 8),
 .hexagon:nth-child(14n + 9),
 .hexagon:nth-child(14n + 10),

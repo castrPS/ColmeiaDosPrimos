@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { InfoComponent } from './info.component';
 import { MainComponent } from './main.component';
 
+//definicoes das rotas
 const appRoutes: Routes = [
 	{
 		path: 'info',
@@ -13,10 +14,6 @@ const appRoutes: Routes = [
 	},
   {
     path: '',
-    component: MainComponent
-  },
-  {
-    path: 'home',
     component: MainComponent
   }
 ]
