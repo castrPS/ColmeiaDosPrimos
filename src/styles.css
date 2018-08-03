@@ -8,19 +8,6 @@ body{
     background-color: transparent;
 }
 
-:root {
-  /* Change this to change the appearance of the hexaons */
-  --hex-width: 10vw; 
-  --hex-between: 1vw;
-  
-  /* Other hexagon dimentions */
-  --hex-height: calc(var(--hex-width) / 1.73 /* sqrt(3) */);
-  --hex-margin: calc(var(--hex-width) / 2);
-  --hex-border: calc(var(--hex-margin) / 1.73 /* sqrt(3) */);
-  --hex-transition: all .2s ease;
-  --color-hex-default:#312f17;
-}
-
 app-root{
   margin: 0;
   padding: 0;
@@ -50,4 +37,8 @@ footer p{
   color: #eec33d;
   font-size: 2vh;
   text-align: center;
+}
+
+a{
+  color: inherit;
 }
