@@ -12,6 +12,12 @@
 
   background-color: transparent;
 }
+
+#hide {
+  position:absolute;
+  left:-9999px
+}
+
 .start-pause{
     cursor: pointer;
 }

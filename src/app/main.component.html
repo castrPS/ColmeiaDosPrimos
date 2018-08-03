@@ -41,8 +41,8 @@
               <p><i class="fa fa-play"></i></p>
           </li>
           <!-- Baixar -->
-          <li *ngIf="stopped" class="hexagon start-pause">
-              <p>Baixar lista com primos</p>
+          <li *ngIf="stopped" class="hexagon start-pause" (click)="download()">
+              <p>Copiar lista de números primos</p>
           </li>
           <!-- Espaçamento -->
           <li class="hexagon-clear">
@@ -53,6 +53,6 @@
               <p></p>
           </li>
           <li *ngFor="let p of numbers;trackBy: trackByFn" class="hexagon">
-            {{ p.id }}
+            {{ p }}
           </li>
   </ul>

@@ -47,16 +47,16 @@ export class MainComponent{
   	this.paused = false;
   	this.stopped=false;
   	this.actual=2;
-  	this.numbers = [{id: this.actual}];
+  	this.numbers = [this.actual];
   	var interval = setInterval(()=>{
   		if(!this.stopped && !this.paused){
   			this.actual= this.generatePrimeNumber(this.actual);
-  			this.numbers = [{id: this.actual}].concat(this.numbers);
+  			this.numbers = [this.actual].concat(this.numbers);
   		}
   		else{
   			clearInterval(interval);
   		}
-  	},1000);
+  	},500);
   }
 
   pause(): void{
@@ -68,7 +68,7 @@ export class MainComponent{
   	var interval = setInterval(()=>{
   		if(!this.stopped && !this.paused){
   			this.actual= this.generatePrimeNumber(this.actual);
-  			this.numbers = [{id: this.actual}].concat(this.numbers);
+  			this.numbers = [this.actual].concat(this.numbers);
   		}
   		else{
   			clearInterval(interval);
@@ -85,6 +85,15 @@ export class MainComponent{
   clear(): void{
   	this.numbers= [];
   	this.actual=2;
+  }
+
+  download(): void{
+    const el = document.createElement('textarea');
+    el.value = JSON.stringify(this.numbers);
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
   }
 
   trackByFn(index, item):void {
