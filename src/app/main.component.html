@@ -10,7 +10,7 @@
               <p></p>
           </li>
           <li *ngIf="stopped" class="hexagon start-pause">
-              <p>Quantidade de primos: {{this.numbers.length}}</p>
+              <p>Quantidade de primos: {{this.sieve.length}}</p>
           </li>   
           <!-- Sobre -->
           <li *ngIf="!started&&!paused" class="hexagon start-pause" routerLink="/info">
@@ -53,6 +53,6 @@
               <p></p>
           </li>
           <li *ngFor="let p of numbers;trackBy: trackByFn" class="hexagon">
-            {{ p }}
+                {{ p }}
           </li>
   </ul>
