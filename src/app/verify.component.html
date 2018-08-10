@@ -1,0 +1,17 @@
+<div id="center">
+    <ul class="hexagon-container">
+              <!-- Espaçamento -->
+              <li class="hexagon">
+                  <p>Digite o primo:</p>
+              </li>
+              <li class="hexagon">
+                  <p><input [(ngModel)]="number" type="number"></p>
+              </li>
+              <li *ngIf = "get" class="hexagon start-pause" (click)="redirectGit()">
+                  <p>{{ isPrime }}</p>
+              </li>
+              <li *ngIf = "get" class="hexagon start-pause" routerLink="/">
+              	<p>Menor divisor: {{ divi }}</p>
+              </li>
+    </ul>
+</div>

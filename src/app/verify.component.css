@@ -1,0 +1,105 @@
+* {
+  /* Change this to change the appearance of the hexaons */
+  --hex-width: 15vw; 
+  --hex-between: 2vw;
+  
+  /* Other hexagon dimentions */
+  --hex-height: calc(var(--hex-width) / 1.73 /* sqrt(3) */);
+  --hex-margin: calc(var(--hex-width) / 2);
+  --hex-border: calc(var(--hex-margin) / 1.73 /* sqrt(3) */);
+  --hex-transition: all .2s ease;
+  --color-hex-default:#312f17;
+
+  background-color: transparent;
+}
+.start-pause{
+    cursor: pointer;
+}
+
+#center{
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hexagons */
+.hexagon-container {
+  margin-top: 5vh;
+  width: 40vw;
+  padding: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  display: grid;
+  grid-template-columns: var(--hex-width) var(--hex-width);
+  grid-auto-rows: calc(var(--hex-width) - 1vw);
+  grid-gap: var(--hex-between) var(--hex-between);
+  padding-bottom: var(--hex-border);
+}
+
+/*Os hexagonos sao feitos atraves de divs com bordas alteradas e sobrepostas*/
+.hexagon {
+  align-items: center;
+  background-color: var(--color-hex-default);  
+  display: flex;
+  fill: white;
+  height: var(--hex-height);
+  justify-content: center;
+  margin: var(--hex-border) 0;
+  position: relative;
+  transition: var(--hex-transition);
+  width: var(--hex-width);
+  color: #eec33d;
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.hexagon::after,
+.hexagon::before {
+  border-left: var(--hex-margin) solid transparent;
+  border-right: var(--hex-margin) solid transparent;
+  content: "";
+  left: 0;
+  position: absolute;
+  transition: var(--hex-transition);
+  width: 0;
+}
+.hexagon::after {
+  border-top: var(--hex-border) solid var(--color-hex-default);
+  top: 100%;
+  width: 0;
+}
+.hexagon::before {
+  border-bottom: var(--hex-border) solid var(--color-hex-default);
+  bottom: 100%;
+}
+
+/* Aqui e o que permite que os hexagonos se encaixem bem*/
+.hexagon:nth-child(4n + 3),
+.hexagon:nth-child(4n + 4){
+  margin-left: calc(var(--hex-width) / 2 + var(--hex-between) / 2);
+}
+
+.hexagon p{
+    color: #eec33d;
+    font-size: 1.5vw;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hexagon a{
+  color: inherit;
+}
+
+.hexagon input{
+    color: #312f17;
+    background-color: #eec33d;
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    width: 90%;
+    border: 0;
+}

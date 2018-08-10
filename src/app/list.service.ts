@@ -17,4 +17,11 @@ export class ListService {
              .then(res => res.json() as Response)
              .catch();
   }
+
+  isPrime(num: number): Promise< Response > {
+    return this.http.get(this.taURL + "/isprime/" + num)
+             .toPromise()
+             .then(res => res.json() as Response)
+             .catch();
+  }
 }
