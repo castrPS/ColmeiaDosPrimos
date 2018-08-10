@@ -3,12 +3,12 @@ import { ListService } from './list.service';
 import { Response } from './response';
 
 @Component({
-  selector: 'list',
+  selector: 'verify',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 
-export class ListComponent{
+export class VerifyComponent{
   constructor(private listService: ListService) {}
 
   title = 'primos';

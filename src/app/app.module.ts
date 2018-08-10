@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { InfoComponent } from './info.component';
 import { MainComponent } from './main.component';
 import { ListComponent } from './list.component';
+import { VerifyComponent } from './verify.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { ListService } from './list.service';
@@ -20,6 +22,10 @@ const appRoutes: Routes = [
   {
     path: 'list',
     component: ListComponent
+  },
+  {
+    path: 'verify',
+    component: VerifyComponent
   },
   {
     path: '',
