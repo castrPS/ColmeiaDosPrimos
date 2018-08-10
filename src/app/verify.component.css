@@ -78,8 +78,9 @@
 }
 
 /* Aqui e o que permite que os hexagonos se encaixem bem*/
-.hexagon:nth-child(4n + 3),
-.hexagon:nth-child(4n + 4){
+.hexagon:nth-child(6n + 4),
+.hexagon:nth-child(6n + 5),
+.hexagon:nth-child(6n + 6){
   margin-left: calc(var(--hex-width) / 2 + var(--hex-between) / 2);
 }
 
