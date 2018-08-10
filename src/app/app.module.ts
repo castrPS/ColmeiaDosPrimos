@@ -39,7 +39,8 @@ const appRoutes: Routes = [
     AppComponent,
     MainComponent,
     InfoComponent,
-    ListComponent
+    ListComponent,
+    VerifyComponent
   ],
   imports: [
     BrowserModule,
