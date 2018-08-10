@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { InfoComponent } from './info.component';
 import { MainComponent } from './main.component';
 import { ListComponent } from './list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { ListService } from './list.service';
 
 //definicoes das rotas
 const appRoutes: Routes = [
@@ -34,6 +37,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
@@ -41,7 +46,7 @@ const appRoutes: Routes = [
     )
 
   ],
-  providers: [],
+  providers: [ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

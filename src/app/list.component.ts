@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ListService } from './list.service';
+import { Prime } from './prime';
 
 @Component({
   selector: 'list',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 
 export class ListComponent{
+  constructor(private listService: ListService) {}
+
   title = 'primos';
   limit: number;
   numbers=[];
@@ -18,8 +22,10 @@ export class ListComponent{
   getPrimes(): void{
   }
 
-  start (limit): void {
-    
+  start (): void {
+    if (this.limit != undefined){
+        this.numbers = this.listService.getPrimes(this.limit).data;
+      }
   }
 
   download(): void{
