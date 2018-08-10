@@ -34,7 +34,7 @@
   margin-left: 0;
   margin-right: 0;
   display: grid;
-  grid-template-columns: var(--hex-width) var(--hex-width);
+  grid-template-columns: var(--hex-width) var(--hex-width) var(--hex-width);
   grid-auto-rows: calc(var(--hex-width) - 1vw);
   grid-gap: var(--hex-between) var(--hex-between);
   padding-bottom: var(--hex-border);

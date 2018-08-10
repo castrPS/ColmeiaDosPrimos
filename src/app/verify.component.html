@@ -7,6 +7,9 @@
               <li class="hexagon">
                   <p><input [(ngModel)]="number" type="number"></p>
               </li>
+              <li class="hexagon start-pause" (click)="start()">
+                <p><i class="fa fa-play"></i></p>
+              </li>
               <li *ngIf = "get" class="hexagon start-pause" (click)="redirectGit()">
                   <p>{{ isPrime }}</p>
               </li>
