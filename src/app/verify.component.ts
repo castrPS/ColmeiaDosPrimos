@@ -4,8 +4,8 @@ import { Response } from './response';
 
 @Component({
   selector: 'verify',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  templateUrl: './verify.component.html',
+  styleUrls: ['./verify.component.css']
 })
 
 export class VerifyComponent{

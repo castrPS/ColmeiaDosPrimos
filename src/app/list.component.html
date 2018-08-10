@@ -28,11 +28,7 @@
           <li class="hexagon-clear">
               <p></p>
           </li>
-
-          <!-- Espaçamento -->
-          <li *ngIf="!stopped" class="hexagon-clear">
-              <p></p>
-          </li>
+          
           <li *ngFor="let p of numbers;trackBy: trackByFn" class="hexagon">
                 {{ p }}
           </li>
