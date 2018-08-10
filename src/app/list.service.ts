@@ -1,7 +1,7 @@
 import { Injectable }    from '@angular/core';
 import { Http, Headers } from '@angular/http';
 
-import { Prime } from './prime';
+import { Response } from './response';
 
 @Injectable()
 export class ListService {
@@ -11,10 +11,10 @@ export class ListService {
 
   constructor(private http: Http) { }
 
-  getPrimes(limit: number): Promise<any> {
+  getPrimes(limit: number): Promise< Response > {
     return this.http.get(this.taURL + "/primes/" + limit)
              .toPromise()
-             .then(res => res.json())
+             .then(res => res.json() as Response)
              .catch();
   }
 }
