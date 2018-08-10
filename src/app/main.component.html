@@ -48,25 +48,26 @@
           <li class="hexagon-clear">
               <p></p>
           </li>
-
-          <li *ngIf="!started&&!stopped&&!paused" class="hexagon-clear">
-              <p></p>
-          </li>
-          <li *ngIf="!started&&!stopped&&!paused" class="hexagon-clear">
-              <p></p>
-          </li>
-          <li *ngIf="!started&&!stopped&&!paused" class="hexagon">
-              <p>Lista de primos usando servidor</p>
-          </li>
-          <li *ngIf="!started&&!stopped&&!paused" class="hexagon">
-              <p>É primo?</p>
-          </li>
-
-
           <!-- Espaçamento -->
           <li *ngIf="!stopped" class="hexagon-clear">
               <p></p>
           </li>
+
+          <li *ngIf="!started&&!stopped&&!paused" class="hexagon-clear">
+              <p></p>
+          </li>
+          <li *ngIf="!started&&!stopped&&!paused" class="hexagon-clear">
+              <p></p>
+          </li>
+          <li *ngIf="!started&&!stopped&&!paused" class="hexagon start-pause" routerLink="/list">
+              <p class="start-pause" routerLink="/list">Lista de primos usando servidor</p>
+          </li>
+          <li *ngIf="!started&&!stopped&&!paused" class="hexagon start-pause">
+              <p class="start-pause">É primo?</p>
+          </li>
+
+
+
           <li *ngFor="let p of numbers;trackBy: trackByFn" class="hexagon">
                 {{ p }}
           </li>

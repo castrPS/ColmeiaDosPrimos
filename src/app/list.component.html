@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<ul class="hexagon-container">
+          <!-- Espaçamento -->
+          <li class="hexagon-clear">
+              <p></p>
+          </li>
+          <li class="hexagon start-pause" (click)="download()">
+              <p>Copiar lista de números primos</p>
+          </li>
+          <!-- Sobre -->
+          <li class="hexagon start-pause" routerLink="/info">
+              <p><i class="fa fa-info"></i></p>
+          </li>
+          <!-- Titulo -->
+          <li class="hexagon">
+              <h1>Lista de primos do servidor</h1>
+          </li>
+          <!-- Começar -->
+          <li class="hexagon start-pause">
+              <p><input [(ngModel)]="limit" type="number"></p>
+          </li>
+          <!-- Começar -->
+          <li class="hexagon start-pause" (click)="start()">
+              <p><i class="fa fa-play"></i></p>
+          </li>
+          <!-- Espaçamento -->
+          <li class="hexagon-clear">
+              <p></p>
+          </li>
+
+          <!-- Espaçamento -->
+          <li *ngIf="!stopped" class="hexagon-clear">
+              <p></p>
+          </li>
+          <li *ngFor="let p of numbers;trackBy: trackByFn" class="hexagon">
+                {{ p.num }}
+          </li>
+  </ul>
